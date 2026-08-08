@@ -1,5 +1,3 @@
-"""                    Hangman with Emojis
-Core Game Logic (CLI Version) a simple terminal-based Hangman game """
 import random
 word_list = [
     {"emoji": "📚", "word": "books"},
