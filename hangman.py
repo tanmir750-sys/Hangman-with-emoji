@@ -102,23 +102,19 @@ def play_word(chosen_word, score_manager, lives):
 
         guess = input("Guess a letter: ").upper().strip()
 
-        # Check input
         if len(guess) != 1 or not guess.isalpha():
             print("Please enter only ONE letter.")
             continue
-
-        # Check repeated letter
+            
         if guess in guessed_letters:
             print("You already guessed that letter.")
             continue
 
         guessed_letters.append(guess)
-
-        # Correct letter
+        
         if guess in word:
             print(f"✅ Good guess! '{guess}' is correct.")
 
-        # Wrong letter
         else:
             lives -= 1
             print(f"❌ Wrong guess! '{guess}' is not in the word.")
