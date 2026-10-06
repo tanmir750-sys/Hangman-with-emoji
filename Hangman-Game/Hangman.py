@@ -103,7 +103,7 @@ class HangmanApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Emoji Hangman — CSE 2216")
-        self.root.geometry("780x680")
+        self.root.geometry("720x680")
         self.root.configure(bg=BG_MAIN)
         self.root.resizable(False, False)
         self.player_name = "Player"
@@ -328,7 +328,7 @@ class HangmanApp:
         self.cancel_timer()
         self.clear_root()
         self.root.configure(bg=BG_MAIN)
-        self.root.geometry("780x680")
+        self.root.geometry("720x680")
         stripe = tk.Frame(self.root, bg=BG_MAIN, height=4)
         stripe.pack(fill="x", side="top")
         colors = [ACCENT_PRIMARY, ACCENT_HINT, ACCENT_SUCCESS, ACCENT_GOLD]
@@ -435,7 +435,7 @@ class HangmanApp:
         self.cancel_timer()
         self.clear_root()
         self.root.configure(bg=BG_MAIN)
-        self.root.geometry("780x680")
+        self.root.geometry("720x680")
 
         if only_unlocked:
             source = self.achievements
@@ -570,13 +570,13 @@ class HangmanApp:
         if ratio >= 0.17:
             return "★  APPRENTICE", ACCENT_WARNING
         return "★  ROOKIE", TEXT_SECONDARY
-        
+
     '''  LEADERBOARD'''
     def show_leaderboard(self):
         self.cancel_timer()
         self.clear_root()
         self.root.configure(bg=BG_MAIN)
-        self.root.geometry("780x680")
+        self.root.geometry("720x680")
 
         container = tk.Frame(self.root, bg=BG_MAIN)
         container.pack(fill="both", expand=True, padx=24, pady=14)
@@ -734,7 +734,7 @@ class HangmanApp:
         self.cancel_timer()
         self.clear_root()
         self.root.configure(bg=BG_MAIN)
-        self.root.geometry("780x680")
+        self.root.geometry("720x680")
         self.score = 0
         self.max_tries = 5
         self.tries_left = self.max_tries
@@ -1035,6 +1035,7 @@ class HangmanApp:
             self.flash(FB_HINT)
             if all(l in self.guessed_letters for l in self.word):
                 self.on_word_solved()
+
     def new_round_ui(self):
         if self.game_over:
             return
@@ -1110,7 +1111,7 @@ class HangmanApp:
         self.save_current_score("Champion")
         self.clear_root()
         self.root.configure(bg=BG_MAIN)
-        self.root.geometry("780x680")
+        self.root.geometry("720x680")
         container = tk.Frame(self.root, bg=BG_MAIN)
         container.pack(fill="both", expand=True, padx=60, pady=24)
         card = self.make_card(container, border=ACCENT_GOLD)
