@@ -570,7 +570,7 @@ class HangmanApp:
         if ratio >= 0.17:
             return "★  APPRENTICE", ACCENT_WARNING
         return "★  ROOKIE", TEXT_SECONDARY
-
+        
     '''  LEADERBOARD'''
     def show_leaderboard(self):
         self.cancel_timer()
@@ -670,7 +670,7 @@ class HangmanApp:
         confirm.grab_set()
 
         self.root.update_idletasks()
-        w, h = 400, 220
+        w, h = 300, 250
         px = self.root.winfo_x() + (self.root.winfo_width() - w) // 2
         py = self.root.winfo_y() + (self.root.winfo_height() - h) // 2
         confirm.geometry(f"{w}x{h}+{px}+{py}")
@@ -918,14 +918,12 @@ class HangmanApp:
             self.set_message(f"'{guess}' is in the word.",
                              ACCENT_SUCCESS, "✓")
             self.flash(FB_SUCCESS)
-            self.root.bell()
         else:
             self.tries_left -= 1
             self.streak = 0
             self.set_message(f"'{guess}' is not in the word.",
                              ACCENT_DANGER, "✕")
             self.flash(FB_DANGER)
-            self.root.bell()
         self.word_label.config(text=self.get_display_word())
         self.update_stats()
         if all(l in self.guessed_letters for l in self.word):
@@ -1037,7 +1035,6 @@ class HangmanApp:
             self.flash(FB_HINT)
             if all(l in self.guessed_letters for l in self.word):
                 self.on_word_solved()
-
     def new_round_ui(self):
         if self.game_over:
             return
